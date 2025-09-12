@@ -1,10 +1,11 @@
 import type { TAppState } from "$lib/types/app";
 import type { TAppStateTransition, TAppStateTransitionDirections, TAppStateTransitions } from "$lib/types/transition";
+import type { Writable } from "svelte/store";
 
 /**
  * Implement a dummy handler.
  */
-export function dummyHandler<T>(_: T) {
+export function dummyHandler<T>(_: Writable<T>): void {
     console.warn("A dummy transition handler was called!");
 }
 
@@ -26,7 +27,7 @@ export function dummyIsAvailable(
  * @param text A text that describes the transition to the user. The default is an empty string (no description).
  */
 export function createTransition(
-    handleTransition: (appState: TAppState) => void = dummyHandler,
+    handleTransition: (appState: Writable<TAppState>) => void = dummyHandler,
     text: string = "",
     isAvailable: (blueeothConnected: boolean) => boolean = dummyIsAvailable,
 ): TAppStateTransition<
@@ -46,9 +47,9 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
     bluetoothSetup: {
         prev: createTransition(),
         next: createTransition(
-            (state: TAppState) => {
+            (state: Writable<TAppState>) => {
                 const nextState: TAppState = "sensorSetup";
-                state = nextState;
+                state.set(nextState);
                 console.debug(
                     `Transitioning from 'bluetoothSetup' to next '${nextState}' stage.`,
                 );
@@ -62,9 +63,9 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
     },
     sensorSetup: {
         prev: createTransition(
-            (state: TAppState) => {
+            (state: Writable<TAppState>) => {
                 const prevState: TAppState = "bluetoothSetup";
-                state = prevState;
+                state.set(prevState);
                 console.debug(
                     `Transitioning from 'sensorSetup' to previous '${prevState}' stage.`,
                 );
@@ -76,9 +77,9 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
             (_: boolean) => true,
         ),
         next: createTransition(
-            (state: TAppState) => {
+            (state: Writable<TAppState>) => {
                 const nextState: TAppState = "training";
-                state = nextState;
+                state.set(nextState);
                 console.debug(
                     `Transitioning from 'sensorSetup' to next '${nextState}' stage.`,
                 );
@@ -92,9 +93,9 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
     },
     training: {
         prev: createTransition(
-            (state: TAppState) => {
+            (state: Writable<TAppState>) => {
                 const prevState: TAppState = "sensorSetup";
-                state = prevState;
+                state.set(prevState);
                 console.debug(
                     `Transitioning from 'training' to previous '${prevState}' stage.`,
                 );

@@ -6,13 +6,22 @@
 	import NavigationNotification from './NavigationNotification.svelte';
 
 	let currentComponent: typeof BluetoothSetup | typeof SensorSetup | typeof Training;
-	if ($appState === 'bluetoothSetup') {
-		currentComponent = BluetoothSetup;
-	} else if ($appState === 'sensorSetup') {
-		currentComponent = SensorSetup;
-	} else if ($appState === 'training') {
-		currentComponent = Training;
+	$: {
+		switch ($appState) {
+			case 'bluetoothSetup':
+				currentComponent = BluetoothSetup;
+				break;
+			case 'sensorSetup':
+				currentComponent = SensorSetup;
+				break;
+			case 'training':
+				currentComponent = Training;
+				break;
+			default:
+				currentComponent = BluetoothSetup; // Fallback component
+		}
 	}
+	$: console.log('Current appState:', $appState);
 </script>
 
 <div class="flex min-h-screen flex-col">

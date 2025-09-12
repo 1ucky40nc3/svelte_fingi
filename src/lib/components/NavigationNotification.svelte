@@ -12,14 +12,14 @@
 
 	function prevTransitionHandler(): void {
 		if (transitions.prev !== undefined) {
-			transitions.prev.handleTransition($appState);
+			transitions.prev.handleTransition(appState);
 		}
 	}
 	const prevText: string = transitions.prev.text;
 
 	function nextTransitionHandler(): void {
 		if (transitions.next !== undefined) {
-			transitions.next.handleTransition($appState);
+			transitions.next.handleTransition(appState);
 		}
 	}
 	const nextText: string = transitions.next.text;
@@ -33,7 +33,7 @@
 		{/if}
 	</div>
 
-	{#if !isConnected}
+	{#if !$isConnected}
 		<Disconnected></Disconnected>
 	{/if}
 

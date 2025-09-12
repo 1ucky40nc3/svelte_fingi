@@ -10,7 +10,7 @@ export type TTransitionDirection = "next" | "prev";
 /**
  * Implement a type for app transition handlers.
  */
-export type TAppTransitionHandler<C> = (context: C) => void;
+export type TAppTransitionHandler<C> = (context: Writable<C>) => void;
 
 /**
  * Implement a type for app transitions.
