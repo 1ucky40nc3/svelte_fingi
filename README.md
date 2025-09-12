@@ -42,3 +42,11 @@ You can preview the production build with `npm run preview`.
 ## Deployment
 
 After [building](#building) the app you can deploy the static content to any webserver you like.
+
+## Architecture
+
+### Architecture Decisions
+
+#### Web Save Fonts
+
+We only [use web save fonts](https://www.w3schools.com/csSref/css_websafe_fonts.php). This is supposed to help with the simplicity and longevity of the application.
