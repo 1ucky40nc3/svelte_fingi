@@ -2,6 +2,8 @@
 	import Stage from '$lib/components/Stage.svelte';
 </script>
 
-<div style="text-align: center; margin-top: 50px;">
-	<Stage></Stage>
-</div>
+<Stage></Stage>
+
+<!-- <style lang="postcss">
+	@reference "tailwindcss";
+</style> -->
