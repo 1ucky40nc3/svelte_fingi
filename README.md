@@ -1,6 +1,6 @@
 # svelte_fingi
 
-A SvelteKit UI for the Open Fingi Project
+A static [SvelteKit](https://svelte.dev/docs/kit/introduction) UI for the [Open Fingi Project](https://github.com/1ucky40nc3/open_fingi_project).
 
 ## Installation
 
@@ -39,4 +39,6 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Deployment
+
+After [building](#building) the app you can deploy the static content to any webserver you like.
