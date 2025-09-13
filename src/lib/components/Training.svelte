@@ -2,10 +2,13 @@
 	import { onMount } from 'svelte';
 	import { Chart, registerables } from 'chart.js';
 	import * as streamingPlugin from '@1ucky40nc3/chartjs-plugin-streaming';
+	import * as zoomPlugin from 'chartjs-plugin-zoom';
 	import 'chartjs-adapter-luxon';
 
 	// Register all necessary components from Chart.js
 	Chart.register(...registerables);
+	// Register the zoom plugin
+	Chart.register(zoomPlugin.default);
 	// Register the streaming plugin
 	Chart.register(streamingPlugin.RealTimeScale);
 	Chart.register(streamingPlugin.StreamingPlugin);
