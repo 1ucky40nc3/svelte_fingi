@@ -1,2 +1,2 @@
 /** A type for time series data. */
-export type TimeSeriesDataType = { x: string; y: number };
+export type TTimeSeriesData = { x: string; y: number };

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { appState } from '$lib/stores/app';
+	import { appState } from '$lib/stores/app.store';
 	import BluetoothSetup from '$lib/components/BluetoothSetup.svelte';
 	import SensorSetup from '$lib/components/SensorSetup.svelte';
 	import Training from '$lib/components/Training.svelte';

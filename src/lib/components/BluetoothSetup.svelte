@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { appState } from '$lib/stores/app';
-	import { isConnected } from '$lib/stores/connection';
+	import { appState } from '$lib/stores/app.store';
+	import { isConnected } from '$lib/stores/connection.store';
 	export let handleConnected: () => Promise<void> = async () => {};
 
 	async function handleOnClick(): Promise<void> {

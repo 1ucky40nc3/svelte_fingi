@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { appState } from '$lib/stores/app';
-	import { isConnected } from '$lib/stores/connection';
+	import { appState } from '$lib/stores/app.store';
+	import { isConnected } from '$lib/stores/connection.store';
 	import type { TAppState } from '$lib/types/app';
 	import type { TAppStateTransitionDirections } from '$lib/types/transition';
-	import { AppStateTransitionDirectionsFactory } from '$lib/utils/transitions';
+	import { AppStateTransitionDirectionsFactory } from '$lib/utils/transitions.utils';
 	import Disconnected from './Disconnected.svelte';
 	import NextTransition from './NextTransition.svelte';
 	import PreviousTransition from './PreviousTransition.svelte';
