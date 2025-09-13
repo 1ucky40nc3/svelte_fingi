@@ -86,13 +86,13 @@
 				}
 			}
 		}
-		// TODO: Fix aspect ratio calculation
-		// aspectRatio: containerRef.offsetHeight / containerRef.offsetWidth,
 	};
 
 	let chartCanvas: HTMLCanvasElement;
 	let chartRef: Chart;
 	onMount(() => {
+		chartOptions.aspectRatio = containerRef.offsetWidth / containerRef.offsetHeight;
+
 		const ctx = chartCanvas.getContext('2d');
 		// @ts-ignore
 		chartRef = new Chart(ctx, {
