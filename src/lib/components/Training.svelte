@@ -102,7 +102,7 @@
 		});
 	});
 
-	let doStopDataStream: boolean = false;
+	let doStopDataStream: boolean = true;
 	let onRefreshHandler: { (): void } = (): void => {};
 
 	const handleStopAndResumeDataStream: { (): void } = (): void => {
