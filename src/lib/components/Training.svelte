@@ -6,7 +6,6 @@
 	import 'chartjs-adapter-luxon';
 	import { chartData } from '$lib/stores/chart.store';
 	import type { ZoomPluginOptions } from 'chartjs-plugin-zoom/types/options';
-	import { on } from 'svelte/events';
 
 	// Register all necessary components from Chart.js
 	Chart.register(...registerables);
