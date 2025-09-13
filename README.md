@@ -43,6 +43,8 @@ You can preview the production build with `npm run preview`.
 
 After [building](#building) the app you can deploy the static content to any webserver you like.
 
+An example of hosting this application in a Nginx Docker container can be found in the [examples/nginx](examples/nginx/README.md) directory.
+
 ## Architecture
 
 ### Architecture Decisions
