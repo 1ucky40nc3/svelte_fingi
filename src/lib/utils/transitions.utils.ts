@@ -44,14 +44,14 @@ export function createTransition(
  * Implement all transitions for the application.
  */
 const TRANSITIONS: TAppStateTransitions<TAppState> = {
-    bluetoothSetup: {
+    connectionSetup: {
         prev: createTransition(),
         next: createTransition(
             (state: Writable<TAppState>) => {
                 const nextState: TAppState = "sensorSetup";
                 state.set(nextState);
                 console.debug(
-                    `Transitioning from 'bluetoothSetup' to next '${nextState}' stage.`,
+                    `Transitioning from 'connectionSetup' to next '${nextState}' stage.`,
                 );
                 console.debug(
                     `Current state value: '${state}'`,
@@ -64,7 +64,7 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
     sensorSetup: {
         prev: createTransition(
             (state: Writable<TAppState>) => {
-                const prevState: TAppState = "bluetoothSetup";
+                const prevState: TAppState = "connectionSetup";
                 state.set(prevState);
                 console.debug(
                     `Transitioning from 'sensorSetup' to previous '${prevState}' stage.`,

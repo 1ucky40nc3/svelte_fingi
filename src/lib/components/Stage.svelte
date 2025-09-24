@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { appState } from '$lib/stores/app.store';
-	import BluetoothSetup from '$lib/components/BluetoothSetup.svelte';
+	import ConnectionSetup from '$lib/components/ConnectionSetup.svelte';
 	import SensorSetup from '$lib/components/SensorSetup.svelte';
 	import Training from '$lib/components/Training.svelte';
 	import NavigationNotification from './NavigationNotification.svelte';
 
-	let currentComponent: typeof BluetoothSetup | typeof SensorSetup | typeof Training;
+	let currentComponent: typeof ConnectionSetup | typeof SensorSetup | typeof Training;
 	$: {
 		switch ($appState) {
-			case 'bluetoothSetup':
-				currentComponent = BluetoothSetup;
+			case 'connectionSetup':
+				currentComponent = ConnectionSetup;
 				break;
 			case 'sensorSetup':
 				currentComponent = SensorSetup;
@@ -18,7 +18,7 @@
 				currentComponent = Training;
 				break;
 			default:
-				currentComponent = BluetoothSetup; // Fallback component
+				currentComponent = ConnectionSetup; // Fallback component
 		}
 	}
 	$: console.log('Current appState:', $appState);
