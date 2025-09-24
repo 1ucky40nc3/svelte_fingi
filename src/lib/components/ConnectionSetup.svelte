@@ -15,21 +15,13 @@
 <div class="flex flex-col">
 	<div class="h-gr-double-3 flex items-center">
 		<h1 class="font-heading text-5xl font-bold">
-			Setup Step 1/2:<br />Bluetooth
+			Setup Step 1/2:<br />Establish Connection
 		</h1>
 	</div>
 	<div class="h-gr-half-4">
-		<span class="font-text text-2xl"> Please connect to a compatible bluetooth device! </span>
+		<span class="font-text text-2xl"> Please connect to a compatible device! </span>
 	</div>
 	<div class="h-gr-half-4 flex flex-row items-center justify-center border-black">
-		<button
-			class="rounded-xl border-2 border-dotted border-black p-5"
-			type="button"
-			on:click={handleOnClick}
-		>
-			<span class="font-interactive inline-block align-middle leading-none">
-				Scan & Connect <br /> Bluetooth Device {'->'}
-			</span>
-		</button>
+		<span>Establish a connection by entering the device wifi.</span>
 	</div>
 </div>
