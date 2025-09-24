@@ -160,11 +160,11 @@
 	};
 </script>
 
-<div bind:this={containerRef} class=" flex flex-col justify-around">
-	<div class="w-gr-double-3 w-full pt-6 pb-6">
-		<canvas bind:this={chartCanvas}></canvas>
+<div bind:this={containerRef} class="flex flex-col justify-around">
+	<div class="flow-row flex h-[80vh] w-[90vw] justify-center">
+		<canvas bind:this={chartCanvas} class=""></canvas>
 	</div>
-	<div class="flex flex-grow flex-row justify-around">
+	<div class="flex flex-grow flex-row justify-around pt-[2vh] pb-[2vh]">
 		<button
 			type="button"
 			class="rounded-xl border-2 border-dotted border-black p-1"

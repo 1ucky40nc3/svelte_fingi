@@ -24,7 +24,7 @@
 	$: console.log('Current appState:', $appState);
 </script>
 
-<div class="flex min-h-screen flex-col">
+<div class="flex min-h-screen flex-col justify-between p-[2vh]">
 	<NavigationNotification></NavigationNotification>
 	<svelte:component this={currentComponent} />
 </div>

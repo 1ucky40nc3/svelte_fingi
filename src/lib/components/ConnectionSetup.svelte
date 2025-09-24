@@ -12,16 +12,16 @@
 	}
 </script>
 
-<div class="flex flex-col">
-	<div class="h-gr-double-3 flex items-center">
+<div class="flex h-[80vh] flex-col">
+	<div class="flex items-center py-[2vh]">
 		<h1 class="font-heading text-5xl font-bold">
 			Setup Step 1/2:<br />Establish Connection
 		</h1>
 	</div>
-	<div class="h-gr-half-4">
+	<div class="py-[2vh]">
 		<span class="font-text text-2xl"> Please connect to a compatible device! </span>
 	</div>
-	<div class="h-gr-half-4 flex flex-row items-center justify-center border-black">
+	<div class="flex flex-row items-center justify-center border-black py-[2vh]">
 		<span>Establish a connection by entering the device wifi.</span>
 	</div>
 </div>
