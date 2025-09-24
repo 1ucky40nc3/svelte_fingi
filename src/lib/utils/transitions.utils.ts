@@ -48,7 +48,7 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
         prev: createTransition(),
         next: createTransition(
             (state: Writable<TAppState>) => {
-                const nextState: TAppState = "sensorSetup";
+                const nextState: TAppState = "calibrationSetup";
                 state.set(nextState);
                 console.debug(
                     `Transitioning from 'connectionSetup' to next '${nextState}' stage.`,
@@ -61,13 +61,13 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
             (_: boolean) => true,
         ),
     },
-    sensorSetup: {
+    calibrationSetup: {
         prev: createTransition(
             (state: Writable<TAppState>) => {
                 const prevState: TAppState = "connectionSetup";
                 state.set(prevState);
                 console.debug(
-                    `Transitioning from 'sensorSetup' to previous '${prevState}' stage.`,
+                    `Transitioning from 'calibrationSetup' to previous '${prevState}' stage.`,
                 );
                 console.debug(
                     `Current state value: '${state}'`,
@@ -81,7 +81,7 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
                 const nextState: TAppState = "training";
                 state.set(nextState);
                 console.debug(
-                    `Transitioning from 'sensorSetup' to next '${nextState}' stage.`,
+                    `Transitioning from 'calibrationSetup' to next '${nextState}' stage.`,
                 );
                 console.debug(
                     `Current state value: '${state}'`,
@@ -94,7 +94,7 @@ const TRANSITIONS: TAppStateTransitions<TAppState> = {
     training: {
         prev: createTransition(
             (state: Writable<TAppState>) => {
-                const prevState: TAppState = "sensorSetup";
+                const prevState: TAppState = "calibrationSetup";
                 state.set(prevState);
                 console.debug(
                     `Transitioning from 'training' to previous '${prevState}' stage.`,

@@ -7,7 +7,7 @@
 		console.debug('Handle bluetooth scan and connect button click.');
 		await handleConnected();
 		if (isConnected) {
-			$appState = 'sensorSetup';
+			$appState = 'calibrationSetup';
 		}
 	}
 </script>

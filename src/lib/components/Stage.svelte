@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { appState } from '$lib/stores/app.store';
 	import ConnectionSetup from '$lib/components/ConnectionSetup.svelte';
-	import SensorSetup from '$lib/components/SensorSetup.svelte';
+	import calibrationSetup from '$lib/components/CalibrationSetup.svelte';
 	import Training from '$lib/components/Training.svelte';
 	import NavigationNotification from './NavigationNotification.svelte';
 
-	let currentComponent: typeof ConnectionSetup | typeof SensorSetup | typeof Training;
+	let currentComponent: typeof ConnectionSetup | typeof calibrationSetup | typeof Training;
 	$: {
 		switch ($appState) {
 			case 'connectionSetup':
 				currentComponent = ConnectionSetup;
 				break;
-			case 'sensorSetup':
-				currentComponent = SensorSetup;
+			case 'calibrationSetup':
+				currentComponent = calibrationSetup;
 				break;
 			case 'training':
 				currentComponent = Training;
